@@ -4,14 +4,50 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Blocks: undefined;
+  Transactions: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type BlocksTabParamList = {
+  BlocksScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type TransactionsTabParamList = {
+  TransactionsScreen: undefined;
 };
+
+export interface BTCBlock {
+  height: number;
+  blockHash: string;
+  timestamp: { time: string };
+}
+
+export interface BTCBlockData {
+  bitcoin: { blocks: BTCBlock[] };
+}
+
+export interface BTCBlockDetails {
+  timestamp: { time: string };
+  height: number;
+  blockHash: string;
+  transactionCount: number;
+  blockSize: number;
+  difficulty: number;
+}
+
+export interface BTCBlockDetailsData {
+  bitcoin: { blocks: BTCBlockDetails[] };
+}
+
+export interface BTCBlockDetailsVars {
+  hash: string;
+}
+
+export interface BTCTx {
+  date: { date: string };
+  index: string;
+}
+
+export interface BTCTxdata {
+  bitcoin: { transactions: BTCTx[] };
+}
